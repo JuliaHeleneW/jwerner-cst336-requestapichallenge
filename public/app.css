@@ -4,7 +4,7 @@
 }
 
 .cover {
-	border: 5px solid;
+	border: 5px solid black;
 	border-radius: 10px;
 }
 
@@ -14,8 +14,6 @@
 }
 .footer{
 	width: 100%;
-	position: absolute;
-	bottom: 0;
 }
 
 hr{

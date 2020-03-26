@@ -15,12 +15,11 @@ app.get('/', function(req, res){
 /* The handler for the /results route */
 app.get('/results', function(req, res){
 	var query = req.query.search;
-	var url = 'https://openlibrary.org/api/books?bibkeys=ISBN:'+query+'0451526538&format=json&jscmd=data';
+	var url = 'https://openlibrary.org/api/books?bibkeys=ISBN:'+query+'&format=json&jscmd=data';
 	request(url, function(error, response, dataStream){
 		if (!error && response.statusCode == 200){
 			var data = JSON.parse(dataStream);
-			//console.log('data=',data);
-			res.render('results', {data: data});
+			res.render('results', {data: data["ISBN:"+query],isbn:query});
 		}
 	});
 });
